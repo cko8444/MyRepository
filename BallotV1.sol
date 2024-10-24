@@ -1,5 +1,5 @@
 pragma solidity = 0.8.26;
-contract BallotV1 {
+contract BallotV2 {
 
     struct Voter {
         uint weight;
