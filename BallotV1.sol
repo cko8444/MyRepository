@@ -29,10 +29,7 @@ contract BallotV2 {
 	// function for changing Phase; can be done only by chairPerson
 	function changeState(Phase ) public {
 		if (msg.sender != chairPerson) { revert(); }
-
 		if (x < state) revert();
-
 		state = x;
-	}
-		
+	}		
 }
