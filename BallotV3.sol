@@ -46,7 +46,7 @@ contract BallotV1 {
 		state = x;
 	}
 
-	function register(address voter) public validPhase(Phase.Regs) {
+	function register(address voter) public validPhase(Phase.Regs) onlyChair {
 		if (msg.sender != chairPerson || voters[voter].voted) revert();
 		voters[voter].weight = 1;
 		voters[voter].voted = false;
