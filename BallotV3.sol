@@ -24,6 +24,11 @@ contract BallotV1 {
 		_;
 	}
 
+	modifier onlyChair() {
+		require(msg.sender == chairPerson);
+		_;
+	}
+
 	constructor (uint numProposals) public  {
 		chairPerson = msg.sender;
 		voters[chairPerson].weight = 2;
